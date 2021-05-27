@@ -1,0 +1,4 @@
+1. remove home-section
+1. remove about client
+1. remove about slider
+1. remove about news
