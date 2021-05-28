@@ -166,60 +166,62 @@ class Team extends CREST_BASE{
         $team_query = new \WP_Query( $args );
         $this->__open_wrap();
         ?>
-        <div class="webdoor w-team" data-scroll-section>
+        <div class="scrolldown">
+            <span><?php echo esc_html__('ALL TEAM', 'kcg'); ?></span>
+        </div>
+
+        <div class="webdoor w-team">
             <div class="submenu">
                 <?php 
-                $i = 1;
-                    $about_menu_id = kcg_options('about_menu_id', '');
-                    foreach ($about_menu_id as $menu_item):
-                        $active_class =  ($i == 3) ? 'active' : '';
-                ?>
-                    <a href="<?php echo esc_url($menu_item['url']); ?>" class="item <?php echo esc_attr($active_class); ?>" data-scroll data-scroll-speed="1"><span><?php echo esc_html($menu_item['title']); ?></span></a>
+                    $i = 1;
+                        $about_menu_id = kcg_options('about_menu_id', '');
+                        foreach ($about_menu_id as $menu_item):
+                            $active_class =  ($i == 3) ? 'active' : '';
+                    ?>
+                        <a href="<?php echo esc_url($menu_item['url']); ?>" class="item <?php echo esc_attr($active_class); ?>"><span><?php echo esc_html($menu_item['title']); ?></span></a>
                 <?php $i++; endforeach; ?>
             </div>
-            <div class="inner">
-                <div class="col col-1"></div>
-                <div class="col col-3">
-                    <?php if (!empty($settings['_kcg_team_member_content'])): ?>
-                         <h1 class="title t-medium t-people" data-scroll data-scroll-speed="2">Meet <span class="name"><?php echo $this->parse_text_editor($settings['_kcg_team_member_content']); ?></h1>
-                    <?php endif; ?>
-                     <?php if (isset($settings['_kcg_team_member_btn']) && !empty($settings['_kcg_team_member_btn'])): ?>
-                        <a href="<?php echo esc_url($settings['_kcg_team_member_link']['url']);?>" class="button b-black" data-scroll data-scroll-speed="3">
+
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col col-5">
+                        <?php if (!empty($settings['_kcg_team_member_content'])): ?>
+                            <h1 class="title t-medium t-people" >Meet <span class="name"><?php echo $this->parse_text_editor($settings['_kcg_team_member_content']); ?></h1>
+                        <?php endif; ?>
+                        <?php if (isset($settings['_kcg_team_member_btn']) && !empty($settings['_kcg_team_member_btn'])): ?>
+                            <a <?php echo kcg__link($settings['_kcg_team_member_link']); ?> class="button b-black">
+                                <div class="wrapper">
+                                    <span class="text"><?php echo $this->parse_text_editor($settings['_kcg_team_member_btn']); ?></span>
+                                </div>
+                            </a>
+                        <?php endif; ?>
+                        
+                    </div>
+                    <div class="col col-5">
+                        <div class="people-scramble">
                             <div class="wrapper">
-                                <div class="background"></div>
-                                <span class="text"><?php echo $this->parse_text_editor($settings['_kcg_team_member_btn']); ?></span>
-                            </div>
-                        </a>
-                    <?php endif; ?>
-                </div>
-                <div class="col col-2"></div>
-                <div class="col col-5">
-                    <div class="people-scramble" data-scroll data-scroll-speed="3">
-                        <div class="wrapper">
-                            <div class="images">
-                                <?php $i = 0; if ( $team_query->have_posts() ): 
-                                while ( $team_query->have_posts() ) : $team_query->the_post();
-                                ?>
-                                    <figure data-target="<?php echo esc_attr($i) ?>" style="background-image:url(<?php echo esc_url(the_post_thumbnail_url()); ?>);"></figure>
-                                <?php $i++; endwhile; wp_reset_postdata(); endif;?>
-                            </div>
-                            <div class="hint">
-                                <?php $j = 0; if ( $team_query->have_posts() ): 
-                                while ( $team_query->have_posts() ) : $team_query->the_post();
-                                    $name = get_post_meta( get_the_ID(), 'team_team-name', true );
-                                    $current_name = !empty($name) ? $name : the_title();
-                                    $role = get_post_meta( get_the_ID(), 'team_designation-role', true );
-                                ?>
-                                    <div class="item" data-target="<?php echo esc_attr($j) ?>" data-name="<?php echo esc_html($current_name); ?>" data-area="<?php echo esc_html($role); ?>" data-link="<?php echo esc_url(the_permalink()); ?>"></div>
-                                 <?php $j++; endwhile; wp_reset_postdata(); endif;?>
+                            
+                                <div class="images">
+                                    <?php $i = 0; if ( $team_query->have_posts() ): 
+                                        while ( $team_query->have_posts() ) : $team_query->the_post();
+                                        ?>
+                                            <figure data-target="<?php echo esc_attr($i) ?>" style="background-image:url(<?php echo esc_url(the_post_thumbnail_url()); ?>);"></figure>
+                                    <?php $i++; endwhile; wp_reset_postdata(); endif;?>
+                                </div>
+                                
+                                <div class="hint">
+                                    <?php $j = 0; if ( $team_query->have_posts() ): 
+                                        while ( $team_query->have_posts() ) : $team_query->the_post();
+                                            $current_name = get_the_title();
+                                            $role = get_post_meta( get_the_ID(), '_kcg_designation_role', true );
+                                        ?>
+                                            <div class="item" data-target="<?php echo esc_attr($j) ?>" data-name="<?php echo esc_html($current_name); ?>" data-area="<?php echo esc_html($role); ?>" data-link="<?php echo esc_url(the_permalink()); ?>"></div>
+                                    <?php $j++; endwhile; wp_reset_postdata(); endif;?>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col col-1"></div>
-            </div>
-            <div class="scrolldown">
-                <span>ALL TEAM</span>
             </div>
         </div>
         <?php

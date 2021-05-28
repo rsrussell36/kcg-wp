@@ -336,16 +336,22 @@ if( ! function_exists( 'kcg_page_name' ) ) {
             $prefix = '404';
         }
         elseif(is_page('home')){
-             $prefix = 'home';
+            $prefix = 'home';
         }
         elseif(is_page('about')){
-             $prefix = 'about';
+            $prefix = 'about';
         }
         elseif(is_page('approach')){
-             $prefix = 'approach';
+            $prefix = 'about-approach';
         }
         elseif(is_page('team')){
-             $prefix = 'team';
+            $prefix = 'about-team';
+        }
+        elseif(is_single() && 'kcg_team' == get_post_type()){
+            $prefix = 'about-person';
+        }
+        elseif(is_page('services')){
+            $prefix = 'services';
         }
         else {
             $prefix = kcg_get_page_title();

@@ -32,6 +32,25 @@ get_header();?>
 				<div class="wrapper"></div>
 			</div>
 		</div>
+		<?php elseif( is_page( 'Services' ) ) : ?>
+			<div class="scrolldown">
+				<span>SCROLL</span>
+			</div>
+
+			<div class="services-bullets sb-dark">
+				<div data-target="slide-1" class="button b-bullet active">
+					<div class="wrapper"></div>
+				</div>
+				<div data-target="slide-2" class="button b-bullet">
+					<div class="wrapper"></div>
+				</div>
+				<div data-target="slide-3" class="button b-bullet">
+					<div class="wrapper"> </div>
+				</div>
+				<div data-target="slide-4" class="button b-bullet">
+					<div class="wrapper"></div>
+				</div>
+			</div>
 	<?php endif; ?>
 <?php
 while ( have_posts() ) :

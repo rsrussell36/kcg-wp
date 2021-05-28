@@ -27,10 +27,10 @@ class Integration{
 	}
     public static function kcg__widgets_map() {
         return [
-            'about-clients' => [
-                'title' => __( 'Image', 'kcg' ),
-                'icon' => 'eicon-post-slider',
-            ],
+            // 'about-clients' => [
+            //     'title' => __( 'Image', 'kcg' ),
+            //     'icon' => 'eicon-post-slider',
+            // ],
             'about-world' => [
                 'title' => __( 'About World', 'kcg' ),
                 'icon' => 'eicon-globe',
@@ -39,14 +39,14 @@ class Integration{
                 'title' => __( 'About Content', 'kcg' ),
                 'icon' => 'eicon-text',
             ],
-            'about-news' => [
-                'title' => __( 'About News', 'kcg' ),
-                'icon' => 'eicon-post',
-            ],
-            'about-slider' => [
-                'title' => __( 'About Slider', 'kcg' ),
-                'icon' => 'eicon-post-slider',
-            ],
+            // 'about-news' => [
+            //     'title' => __( 'About News', 'kcg' ),
+            //     'icon' => 'eicon-post',
+            // ],
+            // 'about-slider' => [
+            //     'title' => __( 'About Slider', 'kcg' ),
+            //     'icon' => 'eicon-post-slider',
+            // ],
             'about-service' => [
                 'title' => __( 'About Service', 'kcg' ),
                 'icon' => 'eicon-image',
@@ -75,10 +75,10 @@ class Integration{
                 'title' => __( 'Globe', 'kcg' ),
                 'icon' => 'eicon-globe',
             ],
-            'home-section' => [
-                'title' => __( 'Home Section', 'kcg' ),
-                'icon' => 'eicon-settings',
-            ],
+            // 'home-section' => [
+            //     'title' => __( 'Home Section', 'kcg' ),
+            //     'icon' => 'eicon-settings',
+            // ],
             'page-title' => [
                 'title' => __( 'Page Title', 'kcg' ),
                 'icon' => 'eicon-post-title',
@@ -95,10 +95,14 @@ class Integration{
                 'title' => __( 'Team Members Grid', 'kcg' ),
                 'icon' => 'eicon-user-circle-o',
             ],
-            'service-menu' => [
-                'title' => __( 'Service Menu', 'kcg' ),
-                'icon' => 'eicon-menu-bar',
+            'services' => [
+                'title' => __( 'Service', 'kcg' ),
+                'icon' => 'eicon-post-content',
             ],
+            // 'service-menu' => [
+            //     'title' => __( 'Service Menu', 'kcg' ),
+            //     'icon' => 'eicon-menu-bar',
+            // ],
             'service-content' => [
                 'title' => __( 'Service Content', 'kcg' ),
                 'icon' => 'eicon-post-content',

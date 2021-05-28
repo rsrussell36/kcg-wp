@@ -116,32 +116,31 @@ class Team_Members extends CREST_BASE{
         $teams_query = new \WP_Query( $teams_args );
         $this->__open_wrap();
         ?>
-        <div class="about-content ac-nobottom" data-scroll-section>
-            <div class="inner">
-                <div class="col col-1"></div>
-                <div class="col col-10">
-                    <div class="people">
-                        <?php $j = 0; if ( $teams_query->have_posts() ): 
-                            while ( $teams_query->have_posts() ) : $teams_query->the_post();
-                            $name = get_post_meta( get_the_ID(), 'team_team-name', true );
-                            $current_name = !empty($name) ? $name : the_title();
-                            $role = get_post_meta( get_the_ID(), 'team_designation-role', true );
-                        ?>
-                        <a href="<?php echo esc_url(get_the_permalink()); ?>" class="item" data-scroll data-scroll-speed="<?php echo esc_attr($j) ?>">
-                            <div class="i-wrapper">
-                                <?php if ( has_post_thumbnail() ) : ?>
-                                    <?php the_post_thumbnail('team_grid'); ?>
-                                <?php endif; ?>
-                                <div class="infos">
-                                    <span class="name"><?php echo esc_html($current_name); ?></span>
-                                    <span class="occupation"><?php echo esc_html($role); ?></span>
-                                </div>
-                            </div>
-                        </a>
-                        <?php $j++; endwhile; wp_reset_postdata(); endif;?>
+        <div class="about-content ac-nobottom">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col col-10">
+                        <div class="people">
+                            <?php $j = 0; if ( $teams_query->have_posts() ): 
+                                while ( $teams_query->have_posts() ) : $teams_query->the_post();
+                                $current_name = get_the_title();
+                                $role = get_post_meta( get_the_ID(), '_kcg_designation_role', true );
+                            ?>
+                                <a href="<?php echo esc_url(get_the_permalink()); ?>" class="item">
+                                    <div class="i-wrapper">
+                                        <?php if ( has_post_thumbnail() ) : ?>
+                                            <?php the_post_thumbnail('team_grid'); ?>
+                                        <?php endif; ?>
+                                    <div class="infos">
+                                        <span class="name"><?php echo esc_html($current_name); ?></span>
+                                        <span class="occupation"><?php echo esc_html($role); ?></span>
+                                    </div>
+                                    </div>
+                                </a>
+                            <?php $j++; endwhile; wp_reset_postdata(); endif;?>
+                        </div>
                     </div>
                 </div>
-                <div class="col col-1"></div>
             </div>
         </div>
         <?php

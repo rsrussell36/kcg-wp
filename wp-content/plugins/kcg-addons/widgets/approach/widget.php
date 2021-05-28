@@ -163,7 +163,7 @@ class Approach extends CREST_BASE{
         
         $this->__open_wrap();
         ?>
-        <div class="webdoor w-approach" data-scroll-section>
+        <div class="webdoor w-approach">
             <div class="submenu sb-white">
                 <?php 
                     $i = 1;
@@ -171,39 +171,40 @@ class Approach extends CREST_BASE{
                         foreach ($about_menu_id as $menu_item):
                             $active_class =  ($i == 2) ? 'active' : '';
                     ?>
-                        <a href="<?php echo esc_url($menu_item['url']); ?>" class="item <?php echo esc_attr($active_class); ?>" data-scroll data-scroll-speed="1"><span><?php echo esc_html($menu_item['title']); ?></span></a>
-                    <?php $i++; endforeach; ?>
+                        <a href="<?php echo esc_url($menu_item['url']); ?>" class="item <?php echo esc_attr($active_class); ?>"><span><?php echo esc_html($menu_item['title']); ?></span></a>
+                <?php $i++; endforeach; ?>
             </div>
-            <div class="inner">
-                <div class="col col-1"></div>
-                <div class="col col-10">
-                     <?php if (!empty($settings['_kcg_approach_heading'])): ?>
-                        <h1 class="title t-medium t-white t-center" data-scroll data-scroll-speed="1">
-                            <?php echo $this->parse_text_editor($settings['_kcg_approach_heading']); ?>
-                        </h1>
+
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+
+                    <div class="col col-10">
+                    <?php if (!empty($settings['_kcg_approach_heading'])): ?>
+                        <h1 class="title t-medium t-white t-center"><?php echo $this->parse_text_editor($settings['_kcg_approach_heading']); ?></h1>
                     <?php endif; ?>
-                    <div class="approach" data-scroll data-scroll-speed="1">
-                        <?php 
-                     if ( empty( $settings['_kcg_approach_items'] ) ) {
-                            return;
-                        }
-                    $i = 1;
-                     foreach ( $settings['_kcg_approach_items'] as $item ) : 
-                        $icon = 'telescope';
-                        if($i == 1){
+
+                    <div class="approach">
+                    <?php 
+                        if ( empty( $settings['_kcg_approach_items'] ) ) {
+                                return;
+                            }
+                        $i = 1;
+                        foreach ( $settings['_kcg_approach_items'] as $item ) : 
                             $icon = 'telescope';
-                        }elseif($i == 2){
-                            $icon = 'rocket';
-                        }elseif($i == 3){
-                            $icon = 'astronaut';
-                        }else{
-                            $icon = 'telescope';
-                        }
-                        ?>
+                            if($i == 1){
+                                $icon = 'telescope';
+                            }elseif($i == 2){
+                                $icon = 'rocket';
+                            }elseif($i == 3){
+                                $icon = 'astronaut';
+                            }else{
+                                $icon = 'telescope';
+                            }
+                    ?>
                         <div class="item" data-video="approach-<?php echo esc_attr($i);?>">
                             <div class="wrapper">
                                 <div class="icon">
-                                    <div class="i-<?php echo esc_attr($icon);?> svg"></div>
+                                <div class="i-<?php echo esc_attr($icon);?> svg"></div>
                                 </div>
                                 <?php if (isset($item['_kcg_approach_title']) && !empty($item['_kcg_approach_title'])): ?>
                                     <h3><?php echo $this->parse_text_editor($item['_kcg_approach_title']); ?></h3> 
@@ -216,27 +217,27 @@ class Approach extends CREST_BASE{
                                 <?php endif ?>
                             </div>
                         </div>
-                        <?php $i++; endforeach; ?>
+                    <?php $i++; endforeach; ?>
                     </div>
+                    </div>
+                    
                 </div>
-                <div class="col col-1"></div>
             </div>
+
             <div class="video-background">
                 <?php 
-                     if ( empty( $settings['_kcg_approach_items'] ) ) {
-                            return;
-                        }
+                    if ( empty( $settings['_kcg_approach_items'] ) ) {
+                        return;
+                    }
                     $j = 1;
-                     foreach ( $settings['_kcg_approach_items'] as $item ) : 
-                        ?>
+                    foreach ( $settings['_kcg_approach_items'] as $item ) : 
+                ?>                
+                <?php if (isset($item['_kcg_approach_hosted_url']) && !empty($item['_kcg_approach_hosted_url']['url'])): ?>
                     <div class="video" data-target="approach-<?php echo esc_attr($j);?>">
-                        <?php if (isset($item['_kcg_approach_hosted_url']) && !empty($item['_kcg_approach_hosted_url']['url'])): ?>
-                            <video autoplay loop muted>
-                                <source src="<?php echo esc_url($item['_kcg_approach_hosted_url']['url']); ?>" type="video/mp4">
-                            </video>
-                        <?php endif ?>
+                        <video loop muted><source src="<?php echo esc_url($item['_kcg_approach_hosted_url']['url']); ?>" type="video/mp4"></video>
                     </div>
-                    <?php $j++; endforeach; ?>
+                <?php endif ?>
+                <?php $j++; endforeach; ?>
             </div>
         </div>
         <?php
