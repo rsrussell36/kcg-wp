@@ -32,7 +32,8 @@ get_header();?>
 				<div class="wrapper"></div>
 			</div>
 		</div>
-		<?php elseif( is_page( 'Services' ) ) : ?>
+		<?php endif; ?>
+		<?php if( is_page( 'services' ) ) : ?>
 			<div class="scrolldown">
 				<span>SCROLL</span>
 			</div>
