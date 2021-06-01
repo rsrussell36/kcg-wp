@@ -83,7 +83,7 @@ class Strategy_Content extends CREST_BASE{
                 'type' => Controls_Manager::TEXT,
                 'label_block' => true,
                 'show_label' => true,
-                'default' => __( 'Get in Touch', 'kcg' ),
+                'default' => __( 'Download PDF', 'kcg' ),
                 'dynamic' => [
                     'active'   => true,
                 ],
@@ -91,17 +91,38 @@ class Strategy_Content extends CREST_BASE{
             ]
         );
         $this->add_control(
-            '_kcg_strategy_c_link',
+            '_kcg_strategy_c_files',
             [
-                'label' => __( 'Link', 'kcg' ),
-                'type' => Controls_Manager::URL,
-                'default' => [
-                    'url' => '#',
-                ],
-                'placeholder' => __( 'https://your-link.com', 'kcg' ),
+                'label' => __( 'Choose File', 'kcg' ),
+                'type' => Controls_Manager::MEDIA,
                 'condition' => [
                     '_kcg_strategy_c_btn!' => ''
                 ]
+            ]
+        );
+        $this->add_control(
+            '_kcg_strategy_c_image_bg',
+            [
+                'label' => esc_html__('Background Image', 'kcg'),
+                'type' => Controls_Manager::MEDIA,
+                'dynamic' => [
+                    'active' => true,
+                ],
+                'default' => [
+                    'url' => Utils::get_placeholder_image_src(),
+                ],
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Image_Size::get_type(),
+            [
+                'name' => 'thumbnail_cbg',
+                'default' => 'large',
+                'separator' => 'after',
+                'exclude' => [
+                    'custom'
+                ],
+                'description' => __('Select image size (or) Leave it empty to apply theme default.', 'kcg'),
             ]
         );
         $this->end_controls_section();
@@ -127,30 +148,37 @@ class Strategy_Content extends CREST_BASE{
     protected function render() {
         $settings = $this->get_settings_for_display();
         $id_int = substr( $this->get_id_int(), 0, 1 );
-        $sec_bg = isset($settings['_kcg_strategy_c_section_bg']) && !empty($settings['_kcg_strategy_c_section_bg']) ? $settings['_kcg_strategy_c_section_bg'] : '#ffffff';
+        $_image_bg = isset($settings['_kcg_strategy_c_image_bg']) && !empty($settings['_kcg_strategy_c_image_bg']) ? wp_get_attachment_image_url( $settings['_kcg_strategy_c_image_bg']['id'], $settings['thumbnail_cbg_size'] ) : '';
         
         $this->__open_wrap();
         ?>
-        <div class="services-content" style="background-color:<?php echo esc_attr($sec_bg); ?>" data-scroll-section>
-            <div class="inner">
-                <div class="col col-3"></div>
-                <div class="col col-6">
+        <div class="services-content">
+            <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col col-11">
+                <div class="services-download" style="background-image:url(<?php echo esc_url($_image_bg); ?>);">
+                    <div class="wrapper">
+                    
                     <?php if( !empty($settings['_kcg_strategy_c_text']) ) :  ?>
-                        <p class="paragraph p-bigger p-center"><?php echo $this->parse_text_editor($settings['_kcg_strategy_c_text']); ?></p>
+                        <div class="title t-small t-white">
+                        <?php echo $this->parse_text_editor($settings['_kcg_strategy_c_text']); ?>
+                    </div>
                     <?php endif; ?>
                     <?php if( !empty($settings['_kcg_strategy_c_btn']) ) : 
                         $st_links = !empty($settings['_kcg_strategy_c_link']) ? $settings['_kcg_strategy_c_link']['url'] : '';
+                        $dfile = !empty($settings['_kcg_strategy_c_files']) ? $settings['_kcg_strategy_c_files']['url'] : '';
                         ?>
-                    <a href="<?php echo esc_url($st_links); ?>" class="button b-black b-align-center">
+                    <a href="<?php echo esc_url($dfile); ?>" class="button b-icon b-white" download>
+                        <span class="label"><?php echo $this->parse_text_editor($settings['_kcg_strategy_c_btn']); ?></span>
                         <div class="wrapper">
-                            <div class="background"></div>
-                            <span class="label"><?php echo $this->parse_text_editor($settings['_kcg_strategy_c_btn']); ?></span>
+                        <div class="arrow svg a-45"></div>
                         </div>
                     </a>
                     <?php endif; ?>
-
+                    </div>
                 </div>
-                <div class="col col-3"></div>
+                </div>
+            </div>
             </div>
         </div>
         <?php $this->__close_wrap();?>

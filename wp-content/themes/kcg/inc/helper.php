@@ -353,6 +353,9 @@ if( ! function_exists( 'kcg_page_name' ) ) {
         elseif(is_page('services')){
             $prefix = 'services';
         }
+        elseif(is_page('services-strategy')){
+            $prefix = 'service';
+        }
         else {
             $prefix = kcg_get_page_title();
         }

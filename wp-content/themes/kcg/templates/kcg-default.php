@@ -12,7 +12,7 @@ get_header();?>
 	<section>
 	<?php if( is_page( 'Home' ) ) : ?>
 		<div class="scrolldown s-white">
-			<span>SCROLL</span>
+			<span><?php echo esc_html__('SCROLL','kcg'); ?></span>
 		</div>
 		
 		<div class="home-bullets">
@@ -35,7 +35,7 @@ get_header();?>
 		<?php endif; ?>
 		<?php if( is_page( 'services' ) ) : ?>
 			<div class="scrolldown">
-				<span>SCROLL</span>
+				<span><?php echo esc_html__('SCROLL','kcg'); ?></span>
 			</div>
 
 			<div class="services-bullets sb-dark">
@@ -52,7 +52,12 @@ get_header();?>
 					<div class="wrapper"></div>
 				</div>
 			</div>
-	<?php endif; ?>
+		<?php endif; ?>
+		<?php if( is_page( 'services-strategy' ) ) : ?>
+			<div class="scrolldown s-white">
+				<span><?php echo esc_html__('SCROLL','kcg'); ?></span>
+			</div>
+		<?php endif; ?>
 <?php
 while ( have_posts() ) :
 	the_post();

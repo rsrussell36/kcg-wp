@@ -48,6 +48,7 @@ class Blog extends CREST_BASE{
                 'label_block' => false,
                 'options'   => [
                     'default' => 'Select',
+                    'style_one' => 'Style One',
                 ],
                 'default' => 'default',
             ]
@@ -205,9 +206,10 @@ class Blog extends CREST_BASE{
         }
 
         $blog_query = new \WP_Query( $args );
+        $section_class = !empty($settings['_kcg_design_blog_section'] && $settings['_kcg_design_blog_section'] == 'style_one') ? 'works-content w-borderT' : 'about-content';
         $this->__open_wrap();
         ?>
-        <div class="about-content">
+        <div class="<?php echo esc_attr($section_class); ?>">
             <div class="container-fluid">
                 <div class="row justify-content-center">
                     <div class="col col-11">

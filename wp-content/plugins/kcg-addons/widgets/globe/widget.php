@@ -157,7 +157,7 @@ class Globe extends CREST_BASE{
         $repeater->add_control(
             '_kcg_globe_link',
             [
-                'label' => __('Link', 'auspicious'),
+                'label' => __('Link', 'kcg'),
                 'type' => Controls_Manager::URL,
                 'dynamic' => [
                     'active' => true,
@@ -168,14 +168,14 @@ class Globe extends CREST_BASE{
                 'condition' =>[
                     '_kcg_globe_btn!' => '',
                 ],
-                'placeholder' => __('https://your-link.com', 'auspicious'),
-                "description" => __("Enter link (or) Leave it to apply default.", 'auspicious'),
+                'placeholder' => __('https://your-link.com', 'kcg'),
+                "description" => __("Enter link (or) Leave it to apply default.", 'kcg'),
             ]
         );
         $repeater->add_control(
             '_kcg_globe_bgc',
             [
-                'label' => __('Background Color', 'auspicious'),
+                'label' => __('Background Color', 'kcg'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
             ]

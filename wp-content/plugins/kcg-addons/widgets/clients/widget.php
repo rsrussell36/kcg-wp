@@ -49,6 +49,7 @@ class Clients extends CREST_BASE{
                 'options'   => [
                     'default' => 'Default',
                     'style_1' => 'Style One',
+                    'style_2' => 'Style Two',
                 ],
                 'default' => 'default',
             ]
@@ -74,7 +75,7 @@ class Clients extends CREST_BASE{
                     'active'   => true,
                 ],
                 'condition' => [
-                    '_kcg_design_clients' => ['default']
+                    '_kcg_design_clients' => ['default', 'style_2']
                 ],
                 'placeholder' => __( 'Enter title', 'kcg' ),
                 'description' => __( 'Enter title (or) Leave it empty to hide.', 'kcg' ),
@@ -92,7 +93,7 @@ class Clients extends CREST_BASE{
                     'active'   => true,
                 ],
                 'condition' => [
-                    '_kcg_design_clients' => ['default', 'style_1']
+                    '_kcg_design_clients' => ['default', 'style_1', 'style_2']
                 ],
                 'placeholder' => __( 'Enter text here', 'kcg' ),
                 'description' => __( 'Enter content (or) Leave it empty to hide.', 'kcg' ),
@@ -325,6 +326,52 @@ class Clients extends CREST_BASE{
 				</div>
 			</div>
 		</div>
+        <?php elseif( $settings['_kcg_design_clients'] == 'style_2' ): ?>
+            <div class="services-content sc-clients">
+                <?php if (isset($settings['_kcg_client_title']) && !empty($settings['_kcg_client_title'])): ?>
+                    <div class="caption c-center"><span><?php echo $this->parse_text_editor($settings['_kcg_client_title']); ?></span></div>
+                <?php endif; ?>
+                <?php if (isset($settings['_kcg_client_txt']) && !empty($settings['_kcg_client_txt'])): ?>
+                    <h2 class="title t-small t-center"><?php echo $this->parse_text_editor($settings['_kcg_client_txt']); ?></strong></h2>
+                <?php endif; ?>
+                <div class="clients">
+                <div class="wrapper">
+                    <?php 
+                         if ( empty( $settings['_kcg_client_logos'] ) ) {
+                                return;
+                            }
+                        $default_count = 1;
+                         foreach ( $settings['_kcg_client_logos'] as $item ) : 
+                            if ($default_count%24 == 1)
+                            {  
+                                echo '<div class="line">';
+                            }
+                            if ($default_count%12 == 1)
+                            {  
+                                echo "<div class='logos'>";
+                            }
+                            ?>
+                            <?php if(isset($item['_kcg_clients_logo']['url']) && !empty($item['_kcg_clients_logo']['url'])) : 
+                                $image = wp_get_attachment_image_url( $item['_kcg_clients_logo']['id'], $settings['thumbnail_size'] );
+                            ?>
+                                <img class="image" src="<?php echo esc_url( $image ); ?>" alt="<?php echo get_post_meta($item['_kcg_clients_logo']['id'], '_wp_attachment_image_alt', true); ?>" />
+                            <?php endif ?>
+                        <?php 
+                            if ($default_count%12 == 0)
+                            {
+                                echo "</div>";
+                            }
+                            if ($default_count%24 == 0)
+                            {
+                                echo "</div>";
+                            }
+                        $default_count++; endforeach;
+                        if ($default_count%12 != 1) echo "</div>";
+                        if ($default_count%24 != 1) echo "</div>";
+                     ?>
+                </div>
+                </div>
+            </div>
         <?php else: ?>
             <div class="about-content">
                 <?php if (isset($settings['_kcg_client_title']) && !empty($settings['_kcg_client_title'])): ?>

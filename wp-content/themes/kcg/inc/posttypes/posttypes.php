@@ -75,13 +75,13 @@ function my_manage_portfolio_columns( $column, $post_id ) {
 	}
 }
 
-	$slug_portfolio = 'teams';
+	$slug_teams = 'teams';
 
 	$team_arr = array(
 		'menu_icon' =>'dashicons-portfolio',
 		'supports' => array( 'title', 'thumbnail', 'editor'),
 		'rewrite' 	=> array(
-			'slug' => $slug_portfolio
+			'slug' => $slug_teams
 		),
 		'has_archive' => true 
 	);
@@ -177,3 +177,17 @@ function my_manage_journal_columns( $column, $post_id ) {
 		break;
 	}
 }
+$slug_tms = 'testimonials';
+
+	$tms_arr = array(
+		'menu_icon' =>'dashicons-testimonial',
+		'supports' => array( 'title', 'thumbnail', 'editor'),
+		'rewrite' 	=> array(
+			'slug' => $slug_tms
+		),
+		'has_archive' => true 
+	);
+
+	$tms_arr = apply_filters( 'kcg_team_post_type_args', $tms_arr );
+
+ new Kcg_Post_Type('testimonial', 'Testimonial', 'Testimonial', $tms_arr);

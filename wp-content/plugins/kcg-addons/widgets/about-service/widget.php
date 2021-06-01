@@ -187,7 +187,20 @@ class About_Service extends CREST_BASE{
                 'title_field' => '{{ _kcg_about_s_subtitle }}',
             ]
         );
-
+        $this->add_control(
+            '_kcg_about_s_class',
+            [
+                'label' => 'Section Class',
+                'type' => Controls_Manager::TEXT,
+                'label_block' => true,
+                'show_label' => true,
+                'default' => 'about-content ac-black',
+                'dynamic' => [
+                    'active'   => true,
+                ],
+                'placeholder' => __( 'Enter title text (or) Leave it empty to hide.', 'kcg' ),
+            ]
+        );
         $this->end_controls_section();
         
     }
@@ -195,10 +208,10 @@ class About_Service extends CREST_BASE{
     protected function render() {
         $settings = $this->get_settings_for_display();
         $id_int = substr( $this->get_id_int(), 0, 3 );
-        
+        $section_class = !empty($settings['_kcg_about_s_class']) ? $settings['_kcg_about_s_class'] : 'about-content ac-black';
         $this->__open_wrap();
         ?>
-        <div class="about-content ac-black">
+        <div class="<?php echo esc_attr($section_class); ?>">
             <div class="container-fluid">
                 <div class="row justify-content-center">
                     <div class="col col-11">

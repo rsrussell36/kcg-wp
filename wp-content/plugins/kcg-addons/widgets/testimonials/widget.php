@@ -48,6 +48,8 @@ class Testimonials extends CREST_BASE{
                 'label_block' => false,
                 'options'   => [
                     'default' => 'Default',
+                    'style_one' => 'Style One',
+                    'style_two' => 'Style Two',
                 ],
                 'default' => 'default',
             ]
@@ -60,7 +62,19 @@ class Testimonials extends CREST_BASE{
                 'label' => __( 'Content', 'kcg' ),
             ]
         );
-         
+        $this->add_control(
+            '_kcg_custom_tsm',
+            [
+                'label' => esc_html__( 'Choose Type', 'kcg' ),
+                'type' => Controls_Manager::SELECT,
+                'label_block' => false,
+                'options'   => [
+                    'default' => 'Custom',
+                    'by_custom_post' => 'By Post Type',
+                ],
+                'default' => 'default',
+            ]
+        );
          $repeater = new Repeater();
          
          $repeater->add_control(
@@ -336,8 +350,58 @@ class Testimonials extends CREST_BASE{
                         ],
                     ],
                 ],
-                
+                'condition' => [
+                    '_kcg_custom_tsm' => ['default']
+                ],
                 'title_field' => '{{ _kcg_slider_name }}',
+            ]
+        );
+        $this->add_control(
+            '_kcg_tms_order_by',
+            [
+                'label' => __('Order By', 'kcg'),
+                'type' => Controls_Manager::SELECT,
+                'default' => 'date',
+                'options' => [
+                    'modified' => __('Modified', 'kcg'),
+                    'date' => __('Date', 'kcg'),
+                    'rand' => __('Rand', 'kcg'),
+                    'ID' => __('ID', 'kcg'),
+                    'title' => __('Title', 'kcg'),
+                    'author' => __('Author', 'kcg'),
+                    'name' => __('Name', 'kcg'),
+                    'parent' => __('Parent', 'kcg'),
+                    'menu_order' => __('Menu Order', 'kcg'),
+                ],
+                'condition' => [
+                    '_kcg_custom_tsm' => ['by_custom_post']
+                ],
+            ]
+        );
+         $this->add_control(
+            '_kcg_tms_order',
+            [
+                'label' => __('Order', 'kcg'),
+                'type' => Controls_Manager::SELECT,
+                'default' => 'ase',
+                'options' => [
+                    'ase' => __('Ascending Order', 'kcg'),
+                    'desc' => __('Descending Order', 'kcg'),
+                ],
+                'condition' => [
+                    '_kcg_custom_tsm' => ['by_custom_post']
+                ],
+            ]
+        );
+         $this->add_control(
+            '_kcg_tms_per_page', [
+                'label' => esc_html__('Posts Per Page', 'kcg'),
+                'type' => Controls_Manager::NUMBER,
+                'placeholder' => esc_html__('Enter Number', 'kcg'),
+                'default' => 10,
+                'condition' => [
+                    '_kcg_custom_tsm' => ['by_custom_post']
+                ],
             ]
         );
         $this->end_controls_section();
@@ -346,17 +410,26 @@ class Testimonials extends CREST_BASE{
     protected function render() {
         $settings = $this->get_settings_for_display();
         $id_int = substr( $this->get_id_int(), 0, 3 );
-        
+        $class_style = '';
+        if(!empty($settings['_kcg_design_tsm']) && $settings['_kcg_design_tsm'] == 'style_one'){
+            $class_style = 'services-content';
+        }elseif(!empty($settings['_kcg_design_tsm']) && $settings['_kcg_design_tsm'] == 'style_two'){
+            $class_style = 'services-content sc-testimonials';
+        }else{
+            $class_style = 'about-content';
+        }
         $this->__open_wrap();
-        if ( !empty( $settings['_kcg_sliders'] ) ) :
+       
         ?>
-         <div class="about-content">
+         <div class="<?php echo esc_attr($class_style); ?>">
             <div class="container-fluid">
                 <div class="row justify-content-center">
                     <div class="col col-9 c-testimonial">
                         <div class="testimonial">
                             <div class="slides">
+                            <?php if($settings['_kcg_custom_tsm'] == 'default'): ?>
                             <?php 
+                             if ( !empty( $settings['_kcg_sliders'] ) ) :
                                 $count = 1;
                                 foreach ( $settings['_kcg_sliders'] as $item ) : 
                             ?>
@@ -382,7 +455,44 @@ class Testimonials extends CREST_BASE{
                                     </div>
                                     </div>
                                 </div>
-                            <?php endforeach; ?>
+                            <?php endforeach; endif; ?>
+                            <?php else: 
+                            $order_by = !empty($settings['_kcg_blog_order_by']) ? $settings['_kcg_blog_order_by'] : 'date';
+                            $order = !empty($settings['_kcg_blog_order']) ? $settings['_kcg_blog_order'] : 'asc';
+                            $per_page = !empty($settings['_kcg_blog_per_page']) ? $settings['_kcg_blog_per_page'] : 10;
+                            $paged = ( get_query_var('page') ) ? get_query_var('page') : 1;
+                            $args = array(
+                                'post_type'   => 'kcg_testimonial',
+                                'post_status' => 'publish',
+                                'ignore_sticky_posts' => 1,
+                                'orderby'             => $order_by,
+                                'order'               => $order,
+                                'posts_per_page'      => $per_page,
+                                'paged' => $paged,
+                            );
+                            $tms_query = new \WP_Query( $args );
+                                $role = get_post_meta( get_the_ID(), '_kcg_tsm_role', true );
+                                while ( $tms_query->have_posts() ) : $tms_query->the_post();
+                                    
+                                ?>
+                            
+                                <div class="item">
+                                    <div class="wrapper">
+                                    <div class="stars svg"></div> 
+                                    <p class="phrase"><?php echo $this->parse_text_editor(the_content()); ?></p> 
+                                    
+                                    <div class="info">
+                                    <?php 
+                                    if ( has_post_thumbnail() ) : 
+                                            the_post_thumbnail('', ['class' => 'photo']); 
+                                    endif; 
+                                ?>
+                                    <span class="name"><?php the_title(); ?></span>
+                                    <span class="occupation"><?php echo esc_html($role); ?></span>
+                                    </div>
+                                    </div>
+                                </div>
+                                <?php endwhile; wp_reset_postdata(); endif;?>
                             </div>
                             <div class="button b-black b-icon t-prev">
                             <div class="wrapper">
@@ -400,7 +510,6 @@ class Testimonials extends CREST_BASE{
             </div>
         </div>
         <?php
-        endif;
         $this->__close_wrap();
     }
     

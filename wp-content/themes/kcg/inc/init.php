@@ -18,6 +18,7 @@ require KCG_THEMEROOT_DIR . '/inc/metabox/journal-meta.php';
 require KCG_THEMEROOT_DIR . '/inc/metabox/team-meta.php';
 require KCG_THEMEROOT_DIR . '/inc/portfolio-helper.php';
 require KCG_THEMEROOT_DIR . '/inc/journal-helper.php';
+require KCG_THEMEROOT_DIR . '/inc/metabox/testimonial-meta.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require KCG_THEMEROOT_DIR . '/inc/jetpack.php';
 }
