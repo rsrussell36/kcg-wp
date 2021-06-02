@@ -52,9 +52,11 @@ function kcg_journal_filter() {
         $current_border = !empty($bordercolor) ? $bordercolor : 'orange';
         ?>
         <a href="<?php echo esc_url($_link); ?>" target="<?php echo esc_attr($target); ?>" class="item" data-color="<?php echo esc_attr($current_border); ?>">
-            <?php if ( has_post_thumbnail() ) : ?>
-                <?php the_post_thumbnail('blog_front', []); ?>
-        <?php endif; ?>
+            <?php 
+                if ( has_post_thumbnail() ) : 
+                        the_post_thumbnail('blog_front', []); 
+                endif; 
+            ?>
             <div class="j-title"><?php the_title(); ?></div>
         </a>
         <?php $i++; endwhile; wp_reset_postdata(); endif;
@@ -83,9 +85,11 @@ function kcg_journal_loading_post() {
         $current_border = !empty($bordercolor) ? $bordercolor : 'orange';
         ?>
         <a href="<?php echo esc_url($_link); ?>" target="<?php echo esc_attr($target); ?>" class="item" data-color="<?php echo esc_attr($current_border); ?>">
-            <?php if ( has_post_thumbnail() ) : ?>
-                <?php the_post_thumbnail('blog_front', []); ?>
-        <?php endif; ?>
+            <?php 
+                if ( has_post_thumbnail() ) : 
+                        the_post_thumbnail('blog_front', []); 
+                endif; 
+            ?>
             <div class="j-title"><?php the_title(); ?></div>
         </a>
         <?php $i++; endwhile; wp_reset_postdata(); endif;
@@ -100,7 +104,6 @@ if (!function_exists('kcg_journal_loadmore')) :
             $output .= '<div class="button b-black b-icon b-center b-align-center loading-journal kcg_journal_loadmore" data-nonce="'.wp_create_nonce( 'kcg-nonce' ).'" data-page="' . esc_attr( $page ) . '" data-maxpage="' . esc_attr( $numpages ) . '"  data-args="' . $args . '">';
             $output .= '<span class="label">'.esc_html__('LOAD MORE', 'kcg').'</span>';
             $output .= '<div class="wrapper">';
-            $output .= '<div class="background"></div>';
             $output .= '<div class="arrow svg a-down"></div>';
             $output .= '</div>';
             $output .= '</div>';

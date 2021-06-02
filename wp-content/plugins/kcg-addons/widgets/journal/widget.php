@@ -234,38 +234,30 @@ class Journal extends CREST_BASE{
         $journal_query = new \WP_Query( $args );
         $this->__open_wrap();
         ?>
-        <div class="webdoor w-journal">
-				<div class="inner">
-					<div class="col col-1"></div>
-					<div class="col col-10">
-						<div class="caption c-center"><span>Journal</span>
-						</div>
-						<h1 class="title t-medium t-center"><strong>Here is where we tell stories.</strong></h1>
-					</div>
-					<div class="col col-1"></div>
-				</div>
-			</div>
-			<div class="journal-content jc-dark">
-				<div class="inner">
-					<div class="col col-12">
-						<div class="journal-highlights">
-							<div class="info" data-color="green">
-								<div class="caption c-white"><span>Highlight</span>
-								</div>
-								<h1 class="title t-medium t-white"><strong>How to bring teams together and manage time zones.</strong></h1>
-							</div>
-							<div class="image">
-								<img src="assets/journal/highlight.jpg" />
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-            <?php if( isset($settings['_kcg_journal_filter_enable']) && 'yes' == !empty($settings['_kcg_journal_filter_enable']) ) : ?>
-			<div class="filter f-marginT">
-				<div class="inner">
-					<div class="col col-12">
-						<?php if( !empty($cats) ) : ?>
+    
+        <div class="journal-content jc-dark">
+            <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col col-11">
+                <div class="journal-highlights">
+                    <div class="info" data-color="green">
+                    <div class="caption c-white"><span>Highlight</span></div>
+                    <h2 class="title t-medium t-white" ><strong>How to bring teams together and manage time zones.</strong></h2>
+                    </div>
+                    <div class="image">
+                    <img src="<?php echo KCG_IMAGES; ?>/journal/highlight.jpg" alt="" />
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <?php if( isset($settings['_kcg_journal_filter_enable']) && 'yes' == !empty($settings['_kcg_journal_filter_enable']) ) : ?>
+            <div class="filter f-marginT">
+                <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col col-11">
+                    <?php if( !empty($cats) ) : ?>
                         <a href="#" class="item active journal-filter" data-nonce="<?php echo wp_create_nonce( 'kcg-nonce' ); ?>" data-id="0" data-order="<?php echo esc_attr($order); ?>" data-orderby="<?php echo esc_attr($order_by); ?>" data-perpage="<?php echo esc_attr($per_page); ?>" data-type="<?php echo esc_html('all');?>"><span><?php echo esc_html__('All Categorie', 'kcg'); ?></span></a>
                         <?php
                             foreach ( $cats as $index => $cat ) :
@@ -279,40 +271,45 @@ class Journal extends CREST_BASE{
                         <?php endif; ?>
                         <?php endforeach; ?>
                         <?php endif; ?>
-					</div>
-				</div>
-			</div>
-            <?php endif; ?>
-			<div class="journal-content">
-				<div class="inner">
-					<div class="col col-12">
-						<div class="journal-list">
-                        <?php $i = 0; if ( $journal_query->have_posts() ): 
-                            while ( $journal_query->have_posts() ) : $journal_query->the_post();
-                            $_link = get_permalink();
-                            $target = kcg_get_meta_value( get_the_id(), '_kcg_target' );
-                            $bordercolor = kcg_get_meta_value( get_the_id(), '_kcg_bordercolor' );
-                            $current_border = !empty($bordercolor) ? $bordercolor : 'orange';
-                        ?>
-							<a href="<?php echo esc_url($_link); ?>" target="<?php echo esc_attr($target); ?>" class="item" data-color="<?php echo esc_attr($current_border); ?>">
-                                <?php 
-                                    if ( has_post_thumbnail() ) : 
-                                            the_post_thumbnail('blog_front', []); 
-                                    endif; 
-                                ?>
-								<div class="j-title"><?php the_title(); ?></div>
-							</a>
-							<?php $i++; endwhile; wp_reset_postdata(); endif;?>
-						</div>
-					</div>
-				</div>
-                <?php
-                    if ( function_exists( 'kcg_journal_loadmore' ) ) {
-                        $argument = base64_encode( serialize( $args ) );
-                        echo kcg_journal_loadmore( $argument, $journal_query->max_num_pages, $paged + 1 );
-                    }
-                ?>
-			</div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        <?php endif; ?>
+        <div class="journal-content">
+            <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col col-11">
+                <div class="journal-list">
+                
+                    <?php $i = 0; if ( $journal_query->have_posts() ): 
+                        while ( $journal_query->have_posts() ) : $journal_query->the_post();
+                        $_link = get_permalink();
+                        $target = kcg_get_meta_value( get_the_id(), '_kcg_target' );
+                        $bordercolor = kcg_get_meta_value( get_the_id(), '_kcg_bordercolor' );
+                        $current_border = !empty($bordercolor) ? $bordercolor : 'orange';
+                    ?>
+                        <a href="<?php echo esc_url($_link); ?>" target="<?php echo esc_attr($target); ?>" class="item" data-color="<?php echo esc_attr($current_border); ?>">
+                            <?php 
+                                if ( has_post_thumbnail() ) : 
+                                        the_post_thumbnail('blog_front', []); 
+                                endif; 
+                            ?>
+                            <div class="j-title"><?php the_title(); ?></div>
+                        </a>
+                        <?php $i++; endwhile; wp_reset_postdata(); endif;?>
+                </div>
+                </div>
+            </div>
+            </div>
+            
+            <?php
+                if ( function_exists( 'kcg_journal_loadmore' ) ) {
+                    $argument = base64_encode( serialize( $args ) );
+                    echo kcg_journal_loadmore( $argument, $journal_query->max_num_pages, $paged + 1 );
+                }
+            ?>
+        </div>
         <?php
         $this->__close_wrap();
     }

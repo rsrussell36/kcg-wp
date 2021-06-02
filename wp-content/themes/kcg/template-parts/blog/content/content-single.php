@@ -5,50 +5,52 @@ $writer = kcg_get_meta_value( get_the_id(), '_kcg_writer_name' );
 $publish = kcg_get_meta_value( get_the_id(), '_kcg_publish' );
 $url = get_permalink();
 ?>
-<div class="webdoor w-journal-inner" data-color="<?php echo esc_attr($current_border); ?>">
-    <div class="inner">
+<div class="main-content pages" id="pages">
+<section>
+
+  <div class="webdoor w-journal-inner" data-color="<?php echo esc_attr($current_border); ?>">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
         <div class="col col-1">
-            <a href="#" onclick="window.history.back();" class="button b-icon b-white">
-                <div class="wrapper">
-                    <div class="background"></div>
-                    <div class="arrow svg a-left"></div>
-                </div>
-            </a>
+          <a href="#" onclick="window.history.back();" class="button b-icon b-white">
+            <div class="wrapper">
+              <div class="arrow svg a-left"></div>
+            </div>
+          </a>
         </div>
-        <div class="col col-7">
-            <h1 class="title t-medium t-white"><strong><?php the_title(); ?></strong></h1>
-            <?php if( !empty($writer) ) : ?>
-                <div class="paragraph p-white p-bigger"><?php echo esc_html__('Written by ' . $writer, 'kcg'); ?> </div>
-            <?php endif; ?>
-        </div>
-        <div class="col col-4"></div>
-    </div>
-    <div class="inner">
-        <div class="col col-1"></div>
         <div class="col col-10">
-            <div class="image-journal-inner">
-            <?php 
+          <h1 class="title t-medium t-white" ><strong><?php the_title(); ?></strong></h1>
+          <div class="paragraph p-white p-bigger"><?php echo esc_html__('Written by ' . $writer, 'kcg'); ?></div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col col-9">
+          <div class="image-journal-inner">
+          <?php 
                 if ( has_post_thumbnail() ) : 
                         the_post_thumbnail('blog_single', []); 
                 endif; 
             ?>
-            </div>
+          </div>
         </div>
-        <div class="col col-1"></div>
+      </div>
+
     </div>
-</div>
-<div class="journal-content">
-    <div class="inner">
-        <div class="col col-1"></div>
-        <div class="col col-2">
-        <?php if( !empty($publish) ) : ?>
+  </div>
+
+  <div class="journal-content">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col col-3">
+          <?php if( !empty($publish) ) : ?>
             <div class="details">
                 <span><?php echo esc_html__( 'Published', 'kcg' ) ?></span>
                 <br><?php echo $publish; ?>
             </div>
             <?php endif; ?>
             <?php if( !empty($writer) ) : ?>
-                <div class="details"><?php echo esc_html__('<span>Written by </span> <br>' . $writer, 'kcg'); ?> </div>
+                <div class="details"><span><?php echo esc_html__( 'Written by', 'kcg' ) ?> </span> <br><?php echo $writer; ?> </div>
             <?php endif; ?>
             <div class="details">
                 <span><?php echo esc_html__( 'Share', 'kcg' ) ?></span>
@@ -61,18 +63,25 @@ $url = get_permalink();
                 <br>
             </div>
         </div>
-        <div class="col col-1"></div>
         <div class="col col-6">
+          <div class="paragraph">
             <?php the_content();  ?>
-            <div class="journal-ended">
-                <?php esc_html_e( '<span>CATEGORIES</span>', 'kcg' ); ?></span><?php the_category( '•' ); ?>
-                <?php the_tags( '<div class="details">'. esc_html__( '<span>Tags</span> ', 'kcg' ), ', ', '</div>' ); ?>
+          </div>
+          <div class="journal-ended">
+            <div class="details">
+            <span><?php esc_html_e('CATEGORIES', 'kcg'); ?></span><br>
+                <?php the_category( ' •' ); ?>
             </div>
+            <div class="details">
+                <span> <?php echo esc_html__( 'Tags', 'kcg'); ?></span></br>
+                <?php the_tags(); ?>
+            </div>
+          </div>
         </div>
-        <div class="col col-1"></div>
+      </div>
     </div>
-</div>
-<?php 
+  </div>
+  <?php 
 $category = get_the_category();
 
 if( !empty( $category ) ) :
@@ -111,40 +120,48 @@ $args = array(
 $q = new WP_Query( $args );
 if ( $q->have_posts() ) :
 ?>
+  <div class="journal-content jc-border">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col col-11">
 
-<div class="journal-content jc-border">
-    <div class="inner">
-        <div class="col col-12">
-            <div class="caption">
-                <span><?php echo esc_html__( 'Related Posts', 'kcg' ) ?></span>
-                <a href="#" class="button b-black b-icon">
-                    <span class="label"><?php echo esc_html__( 'SEE ALL', 'kcg' ) ?></span>
-                    <div class="wrapper">
-                        <div class="background"></div>
-                        <div class="arrow svg a-right"></div>
-                    </div>
-                </a>
-            </div>
-            <div class="journal-list">
-            <?php $i = 0; 
-                while ( $journal_query->have_posts() ) : $journal_query->the_post();
+          <div class="caption">
+            <span><?php echo esc_html__( 'Related Posts', 'kcg' ) ?></span>
+
+            <a href="http://localhost/kcg/journal/" class="button b-black b-icon">
+              <span class="label"><?php echo esc_html__( 'SEE ALL', 'kcg' ) ?></span>
+              <div class="wrapper">
+                <div class="background"></div>
+                <div class="arrow svg a-right"></div>
+              </div>
+            </a>
+          </div>
+
+          <div class="journal-list">
+          <?php $i = 0; 
+                while ( $q->have_posts() ) : $q->the_post();
                 $_link = get_permalink();
                 $target = kcg_get_meta_value( get_the_id(), '_kcg_target' );
                 $bordercolor = kcg_get_meta_value( get_the_id(), '_kcg_bordercolor' );
                 $current_border = !empty($bordercolor) ? $bordercolor : 'orange';
             ?>
-               <a href="<?php echo esc_url($_link); ?>" target="<?php echo esc_attr($target); ?>" class="item" data-color="<?php echo esc_attr($current_border); ?>">
+                <a href="<?php echo esc_url($_link); ?>" target="<?php echo esc_attr($target); ?>" class="item" data-color="<?php echo esc_attr($current_border); ?>">
                                 
-               <?php 
-                    if ( has_post_thumbnail() ) : 
-                            the_post_thumbnail('blog_front', []); 
-                    endif; 
-                ?>
+                    <?php 
+                        if ( has_post_thumbnail() ) : 
+                                the_post_thumbnail('blog_front', []); 
+                        endif; 
+                    ?>
                     <div class="j-title"><?php the_title(); ?></div>
                 </a>
-                <?php $i++; endwhile; wp_reset_postdata();?>
-            </div>
+            <?php $i++; endwhile; wp_reset_postdata();?>
+           
+          </div>
+          
         </div>
+      </div>
     </div>
+  </div>
+  <?php endif; ?>
+</section>
 </div>
-<?php endif; ?>
