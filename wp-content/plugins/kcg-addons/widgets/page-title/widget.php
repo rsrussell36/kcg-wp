@@ -99,26 +99,29 @@ class Page_Title extends CREST_BASE{
         ?>
         <div class="webdoor w-legals">
             <?php if(isset($settings['_kcg_page_menu']) && !empty($settings['_kcg_page_menu'])) : ?>
-            <div class="submenu">
-                <?php 
-                $i = 1;
-                    $page_menu_id = kcg_options('page_menu_id', '');
-                    foreach ($page_menu_id as $menu_item):
-                ?>
-                    <a href="<?php echo esc_url($menu_item['url']); ?>" class="item"><span><?php echo esc_html($menu_item['title']); ?></span></a>
-                <?php $i++; endforeach; ?>
-            </div>
-        <?php endif; ?>
-            <?php if(isset($settings['_kcg_page_title']) && !empty($settings['_kcg_page_title'])) : ?>
-            <div class="inner">
-                <div class="col col-1"></div>
-                <div class="col col-10">
-                    <h1 class="title t-medium t-center"><strong><?php echo $this->parse_text_editor($settings['_kcg_page_title']); ?></strong></h1>
+                <div class="submenu">
+                    <?php 
+                        $i = 1;
+                            $page_menu_id = kcg_options('page_menu_id', '');
+                            foreach ($page_menu_id as $menu_item):
+                                //$active_class = is_page('privacy') || is_page('cookies') ? 'active' : '';
+                             
+                        ?>
+                            <a href="<?php echo esc_url($menu_item['url']); ?>" class="item "><span><?php echo esc_html($menu_item['title']); ?></span></a>
+                        <?php $i++; endforeach; ?>
                 </div>
-                <div class="col col-1"></div>
+            <?php endif; ?>
+            <?php if(isset($settings['_kcg_page_title']) && !empty($settings['_kcg_page_title'])) : ?>
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col col-9">
+                    <h1 class="title t-medium t-center"><strong><?php echo $this->parse_text_editor($settings['_kcg_page_title']); ?></strong></h1>
+                    </div>
+                </div>
             </div>
             <?php endif; ?>
         </div>
+        
         <?php
         $this->__close_wrap();
     }

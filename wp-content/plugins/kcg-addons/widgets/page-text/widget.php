@@ -97,21 +97,21 @@ class Page_Text extends CREST_BASE{
         $this->__open_wrap();
         ?>
         <div class="legals-content">
-            <div class="inner">
-                <div class="col col-2"></div>
-                <div class="col col-8">
+            <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col col-7">
                     <?php if(isset($settings['_kcg_page_text_title']) && !empty($settings['_kcg_page_text_title'])) : ?>
-                    <div class="paragraph p-bigger">
-                         <?php echo $this->parse_text_editor($settings['_kcg_page_text_title']); ?>
-                    </div>
+                        <div class="paragraph p-bigger">
+                            <?php echo $this->parse_text_editor($settings['_kcg_page_text_title']); ?>
+                        </div>
                     <?php endif; ?>
-                     <?php if(isset($settings['_kcg_page_text_des']) && !empty($settings['_kcg_page_text_des'])) : ?>
-                    <div class="paragraph">
-                       <?php echo $this->parse_text_editor($settings['_kcg_page_text_des']); ?>
-                    </div>
+                    <?php if(isset($settings['_kcg_page_text_des']) && !empty($settings['_kcg_page_text_des'])) : ?>
+                        <div class="paragraph">
+                            <?php echo $this->parse_text_editor($settings['_kcg_page_text_des']); ?>
+                        </div>
                     <?php endif; ?>
                 </div>
-                <div class="col col-2"></div>
+            </div>
             </div>
         </div>
         <?php

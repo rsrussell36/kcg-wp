@@ -56,7 +56,7 @@ if ( ! function_exists( 'kcg_setup' ) ) :
 			array(
 				'primary_left' => esc_html__( 'Primary Left Menu', 'kcg' ),
 				'primary_right' => esc_html__( 'Primary Right Menu', 'kcg' ),
-				'about_menu' => esc_html__( 'About Page Menu', 'kcg' ),
+				//'about_menu' => esc_html__( 'About Page Menu', 'kcg' ),
 				'footer_menu' => esc_html__( 'Footer Menu', 'kcg' ),
 			)
 		);

@@ -356,7 +356,7 @@ if( ! function_exists( 'kcg_page_name' ) ) {
         elseif(is_page('services-strategy')){
             $prefix = 'service';
         }
-        elseif(is_page('work')){
+        elseif(is_page('works')){
             $prefix = 'works';
         }
         elseif(is_single() && 'kcg_portfolio' == get_post_type()){
@@ -367,6 +367,9 @@ if( ! function_exists( 'kcg_page_name' ) ) {
         }
         elseif(is_single() && 'post' == get_post_type()){
             $prefix = 'journal-inner';
+        }
+        elseif(is_page('privacy') || is_page('cookies') || is_page('terms')){
+            $prefix = 'legals';
         }
         else {
             $prefix = kcg_get_page_title();
