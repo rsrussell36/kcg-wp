@@ -371,6 +371,9 @@ if( ! function_exists( 'kcg_page_name' ) ) {
         elseif(is_page('privacy') || is_page('cookies') || is_page('terms')){
             $prefix = 'legals';
         }
+        elseif(is_page('contact')){
+            $prefix = 'contact';
+        }
         else {
             $prefix = kcg_get_page_title();
         }
