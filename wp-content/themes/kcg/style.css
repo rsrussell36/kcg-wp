@@ -126,4 +126,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     bottom: 0px;
-} 
+}
+.kcg-portdolio h2, .kcg-portdolio h2 strong{
+    font-family: Blacker Sans Pro Bold !important;
+}

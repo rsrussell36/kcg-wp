@@ -213,24 +213,13 @@ class Portfolio extends CREST_BASE{
         $portfolio_query = new \WP_Query( $args );
         $this->__open_wrap();
         ?>
-        <div class="webdoor w-works" data-scroll-section>
-            <div class="submenu">
-                <div class="item active" data-scroll data-scroll-speed="1"><span>WORK</span>
-                </div>
-            </div>
-            <div class="inner">
-                <div class="col col-1"></div>
-                <div class="col col-10">
-                    <h1 class="title t-medium t-center" data-scroll data-scroll-speed="1"><strong>Selected projects to show you<br>what we've been done</strong></h1>
-                </div>
-                <div class="col col-1"></div>
-            </div>
-        </div>
-        <div class="filter" data-scroll-section>
-            <div class="inner">
-                <div class="col col-12">
-                <?php if( !empty($cats) ) : ?>
-                    <a href="#" class="item active portfolio-filter" data-nonce="<?php echo wp_create_nonce( 'kcg-nonce' ); ?>" data-id="0" data-order="<?php echo esc_attr($order); ?>" data-orderby="<?php echo esc_attr($order_by); ?>" data-perpage="<?php echo esc_attr($per_page); ?>" data-type="<?php echo esc_html('all');?>"><span><?php echo esc_html__('All Projects', 'kcg'); ?></span></a>
+       
+        <?php if( !empty($cats) ) : ?>
+            <div class="filter">
+                <div class="container-fluid">
+                    <div class="row justify-content-center">
+                        <div class="col col-11">
+                        <a href="#" class="item active portfolio-filter" data-nonce="<?php echo wp_create_nonce( 'kcg-nonce' ); ?>" data-id="0" data-order="<?php echo esc_attr($order); ?>" data-orderby="<?php echo esc_attr($order_by); ?>" data-perpage="<?php echo esc_attr($per_page); ?>" data-type="<?php echo esc_html('all');?>"><span><?php echo esc_html__('All Projects', 'kcg'); ?></span></a>
                         <?php
                             foreach ( $cats as $index => $cat ) :
                                 if(!empty($settings['_kcg_portfolio_cats'])):
@@ -241,47 +230,50 @@ class Portfolio extends CREST_BASE{
                             <a href="#" class="item portfolio-filter" data-nonce="<?php echo wp_create_nonce( 'kcg-nonce' ); ?>" data-id="<?php echo esc_attr($cat->term_id); ?>" data-order="<?php echo esc_attr($order); ?>" data-orderby="<?php echo esc_attr($order_by); ?>" data-perpage="<?php echo esc_attr($per_page); ?>" data-type="<?php echo esc_html('indivisual');?>"><span><?php echo esc_html( $cat->name ); ?></span></a>
                         <?php endif; ?>
                         <?php endforeach; ?>
-                    <?php endif; ?>
-                </div>
-            </div>
-        </div>
-        <div class="works-content" data-scroll-section>
-            <div class="inner">
-                <div class="col col-12">
-                    <div class="works-list">
-                    <?php $i = 0; if ( $portfolio_query->have_posts() ): 
-                        while ( $portfolio_query->have_posts() ) : $portfolio_query->the_post();
-                        $_link = get_permalink();
-                        $target = kcg_get_meta_value( get_the_id(), '_kcg_target' );
-                        $kcg_portfolio_thumb = kcg_get_meta_value( get_the_id(), '_kcg_portfolio_image' );
-                        $kcg_images_gallery = htmlspecialchars_decode( $kcg_portfolio_thumb );
-                        $thumb_image = json_decode( $kcg_images_gallery,true );
-                        ?>
-                        <a href="<?php echo esc_url($_link); ?>" target="<?php echo esc_attr($target); ?>" class="item" data-scroll data-scroll-speed="0">
-                            <div class="wrapper">
-                            <?php if(!empty($kcg_portfolio_thumb)): ?>
-                                <figure class="image" style="background-image:url(<?php echo esc_url($thumb_image[0]['full']); ?>);"></figure>
-                                <?php endif; ?>
-                                <div class="infos">
-                                    <div class="name"><?php the_title(); ?></div>
-                                    <div class="type"><?php 
-                                        $kcg_cats = kcg_get_the_term_list( get_the_ID() , 'kcg_categories','',', ' );
-                                        $kcg_cats = !empty( $kcg_cats ) ? strip_tags( $kcg_cats ) : '';
-                                        echo $kcg_cats;
-                                    ?></div>
-                                </div>
-                            </div>
-                        </a>
-                        <?php $i++; endwhile; wp_reset_postdata(); endif;?>
+                        </div>
                     </div>
                 </div>
             </div>
-            <?php
-                if ( function_exists( 'kcg_portfolio_loadmore' ) ) {
-                    $argument = base64_encode( serialize( $args ) );
-                    echo kcg_portfolio_loadmore( $argument, $portfolio_query->max_num_pages, $paged + 1 );
-                }
-			?>
+        <?php endif; ?>
+        <div class="works-content">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col col-11">
+                        <div class="works-list">
+                            <?php $i = 0; if ( $portfolio_query->have_posts() ): 
+                            while ( $portfolio_query->have_posts() ) : $portfolio_query->the_post();
+                            $_link = get_permalink();
+                            $target = kcg_get_meta_value( get_the_id(), '_kcg_target' );
+                            $kcg_portfolio_thumb = kcg_get_meta_value( get_the_id(), '_kcg_portfolio_image' );
+                            $kcg_images_gallery = htmlspecialchars_decode( $kcg_portfolio_thumb );
+                            $thumb_image = json_decode( $kcg_images_gallery,true );
+                            ?>
+                            <a href="<?php echo esc_url($_link); ?>" target="<?php echo esc_attr($target); ?>" class="item">
+                                <div class="wrapper">
+                                <?php if(!empty($kcg_portfolio_thumb)): ?>
+                                    <img class="image" src="<?php echo esc_url($thumb_image[0]['full']); ?>" alt="<?php echo get_post_meta($thumb_image[0]['itemId'], '_wp_attachment_image_alt', true); ?>">
+                                    <?php endif; ?>
+                                    <div class="infos">
+                                        <div class="name"><?php the_title(); ?></div>
+                                        <div class="type"><?php 
+                                            $kcg_cats = kcg_get_the_term_list( get_the_ID() , 'kcg_categories','',', ' );
+                                            $kcg_cats = !empty( $kcg_cats ) ? strip_tags( $kcg_cats ) : '';
+                                            echo $kcg_cats;
+                                        ?></div>
+                                    </div>
+                                </div>
+                            </a>
+                            <?php $i++; endwhile; wp_reset_postdata(); endif;?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="button b-black b-icon b-center b-align-center">
+            <span class="label">LOAD MORE</span>
+            <div class="wrapper">
+                <div class="arrow svg a-down"></div>
+            </div>
+            </div>
         </div>
         <?php
         $this->__close_wrap();

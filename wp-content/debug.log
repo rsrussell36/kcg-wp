@@ -511,3 +511,137 @@ Stack trace:
 [01-Jun-2021 18:45:46 UTC] PHP Notice:  Undefined variable: i in F:\xampp\htdocs\kcg\wp-content\plugins\kcg-addons\widgets\testimonials\widget.php on line 495
 [01-Jun-2021 18:46:35 UTC] PHP Warning:  Illegal string offset 'id' in F:\xampp\htdocs\kcg\wp-content\plugins\kcg-addons\widgets\strategy\widget.php on line 421
 [01-Jun-2021 18:47:17 UTC] PHP Warning:  Illegal string offset 'id' in F:\xampp\htdocs\kcg\wp-content\plugins\kcg-addons\widgets\strategy\widget.php on line 421
+[02-Jun-2021 11:16:18 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:16:18 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:16:25 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:16:25 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:16:25 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:16:25 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:16:25 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:16:26 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:16:26 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:16:26 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:16:26 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:16:26 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:16:34 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:16:34 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:16:34 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:16:34 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:16:34 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:16:37 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:16:37 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:16:37 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:16:37 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:16:37 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:16:38 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:16:38 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:16:38 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:16:38 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:16:40 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:16:40 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:16:40 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:16:40 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:16:40 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:16:41 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:16:41 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:16:41 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:16:41 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:16:41 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:17:43 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:17:43 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:17:43 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:17:43 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:17:43 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:18:04 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:18:04 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:18:04 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:18:04 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:18:04 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:18:12 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:18:12 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:18:12 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:18:12 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:18:12 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:18:20 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:18:20 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:18:20 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:18:20 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:18:20 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:26:20 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:26:20 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:26:20 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:26:20 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:26:20 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:26:43 UTC] PHP Notice:  Undefined index: itemId in F:\xampp\htdocs\kcg\wp-content\plugins\kcg-addons\widgets\portfolio\widget.php on line 262
+[02-Jun-2021 11:26:43 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:26:43 UTC] PHP Notice:  Undefined index: itemId in F:\xampp\htdocs\kcg\wp-content\plugins\kcg-addons\widgets\portfolio\widget.php on line 262
+[02-Jun-2021 11:26:43 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:26:43 UTC] PHP Notice:  Undefined index: itemId in F:\xampp\htdocs\kcg\wp-content\plugins\kcg-addons\widgets\portfolio\widget.php on line 262
+[02-Jun-2021 11:26:43 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:26:43 UTC] PHP Notice:  Undefined index: itemId in F:\xampp\htdocs\kcg\wp-content\plugins\kcg-addons\widgets\portfolio\widget.php on line 262
+[02-Jun-2021 11:26:43 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:26:43 UTC] PHP Notice:  Undefined index: itemId in F:\xampp\htdocs\kcg\wp-content\plugins\kcg-addons\widgets\portfolio\widget.php on line 262
+[02-Jun-2021 11:26:43 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:26:54 UTC] PHP Notice:  Undefined index: itemId in F:\xampp\htdocs\kcg\wp-content\plugins\kcg-addons\widgets\portfolio\widget.php on line 262
+[02-Jun-2021 11:26:54 UTC] PHP Notice:  Trying to access array offset on value of type null in F:\xampp\htdocs\kcg\wp-content\plugins\kcg-addons\widgets\portfolio\widget.php on line 262
+[02-Jun-2021 11:26:54 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:26:54 UTC] PHP Notice:  Undefined index: itemId in F:\xampp\htdocs\kcg\wp-content\plugins\kcg-addons\widgets\portfolio\widget.php on line 262
+[02-Jun-2021 11:26:54 UTC] PHP Notice:  Trying to access array offset on value of type null in F:\xampp\htdocs\kcg\wp-content\plugins\kcg-addons\widgets\portfolio\widget.php on line 262
+[02-Jun-2021 11:26:54 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:26:54 UTC] PHP Notice:  Undefined index: itemId in F:\xampp\htdocs\kcg\wp-content\plugins\kcg-addons\widgets\portfolio\widget.php on line 262
+[02-Jun-2021 11:26:54 UTC] PHP Notice:  Trying to access array offset on value of type null in F:\xampp\htdocs\kcg\wp-content\plugins\kcg-addons\widgets\portfolio\widget.php on line 262
+[02-Jun-2021 11:26:54 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:26:54 UTC] PHP Notice:  Undefined index: itemId in F:\xampp\htdocs\kcg\wp-content\plugins\kcg-addons\widgets\portfolio\widget.php on line 262
+[02-Jun-2021 11:26:54 UTC] PHP Notice:  Trying to access array offset on value of type null in F:\xampp\htdocs\kcg\wp-content\plugins\kcg-addons\widgets\portfolio\widget.php on line 262
+[02-Jun-2021 11:26:54 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:26:54 UTC] PHP Notice:  Undefined index: itemId in F:\xampp\htdocs\kcg\wp-content\plugins\kcg-addons\widgets\portfolio\widget.php on line 262
+[02-Jun-2021 11:26:54 UTC] PHP Notice:  Trying to access array offset on value of type null in F:\xampp\htdocs\kcg\wp-content\plugins\kcg-addons\widgets\portfolio\widget.php on line 262
+[02-Jun-2021 11:26:54 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:27:12 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:27:12 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:27:12 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:27:12 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 11:27:12 UTC] PHP Notice:  Array to string conversion in F:\xampp\htdocs\kcg\wp-includes\formatting.php on line 1098
+[02-Jun-2021 12:03:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function wc_get_page_id() in F:\xampp\htdocs\kcg\wp-content\themes\kcg\single-kcg_portfolio.php:115
+Stack trace:
+#0 F:\xampp\htdocs\kcg\wp-includes\template-loader.php(106): include()
+#1 F:\xampp\htdocs\kcg\wp-blog-header.php(19): require_once('F:\\xampp\\htdocs...')
+#2 F:\xampp\htdocs\kcg\index.php(17): require('F:\\xampp\\htdocs...')
+#3 {main}
+  thrown in F:\xampp\htdocs\kcg\wp-content\themes\kcg\single-kcg_portfolio.php on line 115
+[02-Jun-2021 12:05:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function wc_get_page_id() in F:\xampp\htdocs\kcg\wp-content\themes\kcg\single-kcg_portfolio.php:117
+Stack trace:
+#0 F:\xampp\htdocs\kcg\wp-includes\template-loader.php(106): include()
+#1 F:\xampp\htdocs\kcg\wp-blog-header.php(19): require_once('F:\\xampp\\htdocs...')
+#2 F:\xampp\htdocs\kcg\index.php(17): require('F:\\xampp\\htdocs...')
+#3 {main}
+  thrown in F:\xampp\htdocs\kcg\wp-content\themes\kcg\single-kcg_portfolio.php on line 117
+[02-Jun-2021 12:06:14 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function wc_get_page_id() in F:\xampp\htdocs\kcg\wp-content\themes\kcg\single-kcg_portfolio.php:117
+Stack trace:
+#0 F:\xampp\htdocs\kcg\wp-includes\template-loader.php(106): include()
+#1 F:\xampp\htdocs\kcg\wp-blog-header.php(19): require_once('F:\\xampp\\htdocs...')
+#2 F:\xampp\htdocs\kcg\index.php(17): require('F:\\xampp\\htdocs...')
+#3 {main}
+  thrown in F:\xampp\htdocs\kcg\wp-content\themes\kcg\single-kcg_portfolio.php on line 117
+[02-Jun-2021 12:06:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function wc_get_page_id() in F:\xampp\htdocs\kcg\wp-content\themes\kcg\single-kcg_portfolio.php:117
+Stack trace:
+#0 F:\xampp\htdocs\kcg\wp-includes\template-loader.php(106): include()
+#1 F:\xampp\htdocs\kcg\wp-blog-header.php(19): require_once('F:\\xampp\\htdocs...')
+#2 F:\xampp\htdocs\kcg\index.php(17): require('F:\\xampp\\htdocs...')
+#3 {main}
+  thrown in F:\xampp\htdocs\kcg\wp-content\themes\kcg\single-kcg_portfolio.php on line 117
+[02-Jun-2021 12:06:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function wc_get_page_id() in F:\xampp\htdocs\kcg\wp-content\themes\kcg\single-kcg_portfolio.php:118
+Stack trace:
+#0 F:\xampp\htdocs\kcg\wp-includes\template-loader.php(106): include()
+#1 F:\xampp\htdocs\kcg\wp-blog-header.php(19): require_once('F:\\xampp\\htdocs...')
+#2 F:\xampp\htdocs\kcg\index.php(17): require('F:\\xampp\\htdocs...')
+#3 {main}
+  thrown in F:\xampp\htdocs\kcg\wp-content\themes\kcg\single-kcg_portfolio.php on line 118
+[02-Jun-2021 12:06:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function wc_get_page_id() in F:\xampp\htdocs\kcg\wp-content\themes\kcg\single-kcg_portfolio.php:118
+Stack trace:
+#0 F:\xampp\htdocs\kcg\wp-includes\template-loader.php(106): include()
+#1 F:\xampp\htdocs\kcg\wp-blog-header.php(19): require_once('F:\\xampp\\htdocs...')
+#2 F:\xampp\htdocs\kcg\index.php(17): require('F:\\xampp\\htdocs...')
+#3 {main}
+  thrown in F:\xampp\htdocs\kcg\wp-content\themes\kcg\single-kcg_portfolio.php on line 118
+[02-Jun-2021 12:28:53 UTC] PHP Warning:  Illegal string offset 'id' in F:\xampp\htdocs\kcg\wp-content\plugins\kcg-addons\widgets\strategy\widget.php on line 421

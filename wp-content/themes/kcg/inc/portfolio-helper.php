@@ -52,10 +52,10 @@ function kcg_portfolio_filter() {
         $kcg_images_gallery = htmlspecialchars_decode( $kcg_portfolio_thumb );
         $thumb_image = json_decode( $kcg_images_gallery,true );
         ?>
-        <a href="<?php echo esc_url($_link); ?>" target="<?php echo esc_attr($target); ?>" class="item" data-scroll data-scroll-speed="0">
+        <a href="<?php echo esc_url($_link); ?>" target="<?php echo esc_attr($target); ?>" class="item">
             <div class="wrapper">
             <?php if(!empty($kcg_portfolio_thumb)): ?>
-                <figure class="image" style="background-image:url(<?php echo esc_url($thumb_image[0]['full']); ?>);"></figure>
+                <img class="image" src="<?php echo esc_url($thumb_image[0]['full']); ?>" alt="<?php echo get_post_meta($thumb_image[0]['itemId'], '_wp_attachment_image_alt', true); ?>">
                 <?php endif; ?>
                 <div class="infos">
                     <div class="name"><?php the_title(); ?></div>
@@ -93,10 +93,10 @@ function kcg_loading_post() {
         $kcg_images_gallery = htmlspecialchars_decode( $kcg_portfolio_thumb );
         $thumb_image = json_decode( $kcg_images_gallery,true );
         ?>
-        <a href="<?php echo esc_url($_link); ?>" target="<?php echo esc_attr($target); ?>" class="item" data-scroll data-scroll-speed="0">
+        <a href="<?php echo esc_url($_link); ?>" target="<?php echo esc_attr($target); ?>" class="item">
             <div class="wrapper">
             <?php if(!empty($kcg_portfolio_thumb)): ?>
-                <figure class="image" style="background-image:url(<?php echo esc_url($thumb_image[0]['full']); ?>);"></figure>
+                <img class="image" src="<?php echo esc_url($thumb_image[0]['full']); ?>" alt="<?php echo get_post_meta($thumb_image[0]['itemId'], '_wp_attachment_image_alt', true); ?>">
                 <?php endif; ?>
                 <div class="infos">
                     <div class="name"><?php the_title(); ?></div>
@@ -120,7 +120,6 @@ if (!function_exists('kcg_portfolio_loadmore')) :
             $output .= '<div class="button b-black b-icon b-center b-align-center loading-portfolio kcg_portfolio_loadmore" data-nonce="'.wp_create_nonce( 'kcg-nonce' ).'" data-page="' . esc_attr( $page ) . '" data-maxpage="' . esc_attr( $numpages ) . '"  data-args="' . $args . '">';
             $output .= '<span class="label">'.esc_html__('LOAD MORE', 'kcg').'</span>';
             $output .= '<div class="wrapper">';
-            $output .= '<div class="background"></div>';
             $output .= '<div class="arrow svg a-down"></div>';
             $output .= '</div>';
             $output .= '</div>';

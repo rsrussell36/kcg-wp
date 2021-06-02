@@ -356,6 +356,15 @@ if( ! function_exists( 'kcg_page_name' ) ) {
         elseif(is_page('services-strategy')){
             $prefix = 'service';
         }
+        elseif(is_page('work')){
+            $prefix = 'works';
+        }
+        elseif(is_single() && 'kcg_portfolio' == get_post_type()){
+            $prefix = 'work';
+        }
+        elseif(is_page('journal')){
+            $prefix = 'journal';
+        }
         else {
             $prefix = kcg_get_page_title();
         }
