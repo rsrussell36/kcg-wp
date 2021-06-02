@@ -365,6 +365,9 @@ if( ! function_exists( 'kcg_page_name' ) ) {
         elseif(is_page('journal')){
             $prefix = 'journal';
         }
+        elseif(is_single() && 'post' == get_post_type()){
+            $prefix = 'journal-inner';
+        }
         else {
             $prefix = kcg_get_page_title();
         }

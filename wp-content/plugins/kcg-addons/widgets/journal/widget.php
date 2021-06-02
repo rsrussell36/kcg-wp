@@ -235,23 +235,7 @@ class Journal extends CREST_BASE{
         $this->__open_wrap();
         ?>
     
-        <div class="journal-content jc-dark">
-            <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col col-11">
-                <div class="journal-highlights">
-                    <div class="info" data-color="green">
-                    <div class="caption c-white"><span>Highlight</span></div>
-                    <h2 class="title t-medium t-white" ><strong>How to bring teams together and manage time zones.</strong></h2>
-                    </div>
-                    <div class="image">
-                    <img src="<?php echo KCG_IMAGES; ?>/journal/highlight.jpg" alt="" />
-                    </div>
-                </div>
-                </div>
-            </div>
-            </div>
-        </div>
+        
         <?php if( isset($settings['_kcg_journal_filter_enable']) && 'yes' == !empty($settings['_kcg_journal_filter_enable']) ) : ?>
             <div class="filter f-marginT">
                 <div class="container-fluid">
