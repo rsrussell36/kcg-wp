@@ -76,18 +76,7 @@ class Contact extends CREST_BASE{
                 'description' => __( 'Enter title (or) Leave it empty to hide.', 'kcg' ),
             ]
         );
-        // $this->add_control(
-        //     '_kcg_page_menu',
-        //     [
-        //         'label' => __( 'Show Page Menu', 'kcg' ),
-        //         'type' => Controls_Manager::SWITCHER,
-        //         'label_on' => __( 'Yes', 'kcg' ),
-        //         'label_off' => __( 'No', 'kcg' ),
-        //         'return_value' => 'yes',
-        //         'default' => 'yes',
-        //         'description' => __( 'Enable to show page menu (or) Leave it empty to hide.', 'kcg' ),
-        //     ]
-        // );
+
         if ( ! kcg_contact7_activated() ) {
             $this->register_cf7_notice();
         }else{
@@ -161,14 +150,14 @@ class Contact extends CREST_BASE{
         $is_address_h = kcg_options('is_address_h', '');
         $this->__open_wrap();
         ?>
-        <div class="webdoor w-contact">
-            <div class="inner">
-                <div class="col col-1"></div>
-                <div class="col col-10">
-                    <div class="contact">
-                        <div class="right">_kcg_contact
+         <div class="webdoor w-contact">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col col-9">
+                        <div class="contact">
+                            <div class="right">
                             <?php if(isset($settings['_kcg_contact_title']) && !empty($settings['_kcg_contact_title'])) : ?>
-                            <h1 class="title t-white"><?php echo $this->parse_text_editor($settings['_kcg_contact_title']); ?></h1>
+                                <h1 class="title t-white"><?php echo $this->parse_text_editor($settings['_kcg_contact_title']); ?></h1>
                             <?php endif; ?>
                             <div class="infos">
                                 <?php if( true == $is_email_h ) : ?>
@@ -183,10 +172,9 @@ class Contact extends CREST_BASE{
                                       <?php echo $general_address; ?>
                                     </span>
                                 <?php endif; ?>
-                                
                             </div>
-                        </div>
-                        <div class="left">
+                            </div>
+                            <div class="left">
                             <?php 
                               if(true == $is_show_social) {
                                 if(true == $is_show_social_h) {
@@ -195,11 +183,10 @@ class Contact extends CREST_BASE{
                               }
                             ?>
                             <?php echo do_shortcode('[contact-form-7 id="'.$settings['_kcg_cf7_form_id'].'"]' ); ?>
-                            
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col col-1"></div>
             </div>
         </div>
         <?php

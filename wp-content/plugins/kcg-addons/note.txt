@@ -1,7 +1,0 @@
-1. remove home-section
-1. remove about client
-1. remove about slider
-1. remove about news
-1. remove service menu
-1. remove service content
-1. remove strategy case

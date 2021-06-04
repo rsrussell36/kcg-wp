@@ -22,6 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     Redux::setArgs( $opt_name, $args );
 
 	require KCG_THEMEROOT_DIR . '/lib/options/opt_general.php';
+	require KCG_THEMEROOT_DIR . '/lib/options/opt_header.php';
     require KCG_THEMEROOT_DIR . '/lib/options/opt_about.php';
     require KCG_THEMEROOT_DIR . '/lib/options/opt_service.php';
     require KCG_THEMEROOT_DIR . '/lib/options/opt_pages.php';

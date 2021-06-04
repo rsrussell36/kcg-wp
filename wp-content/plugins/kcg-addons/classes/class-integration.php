@@ -27,10 +27,6 @@ class Integration{
 	}
     public static function kcg__widgets_map() {
         return [
-            // 'about-clients' => [
-            //     'title' => __( 'Image', 'kcg' ),
-            //     'icon' => 'eicon-post-slider',
-            // ],
             'about-world' => [
                 'title' => __( 'About World', 'kcg' ),
                 'icon' => 'eicon-globe',
@@ -39,14 +35,6 @@ class Integration{
                 'title' => __( 'About Content', 'kcg' ),
                 'icon' => 'eicon-text',
             ],
-            // 'about-news' => [
-            //     'title' => __( 'About News', 'kcg' ),
-            //     'icon' => 'eicon-post',
-            // ],
-            // 'about-slider' => [
-            //     'title' => __( 'About Slider', 'kcg' ),
-            //     'icon' => 'eicon-post-slider',
-            // ],
             'about-service' => [
                 'title' => __( 'About Service', 'kcg' ),
                 'icon' => 'eicon-image',
@@ -67,18 +55,14 @@ class Integration{
                 'title' => __( 'Contact', 'kcg' ),
                 'icon' => 'eicon-text',
             ],
-            'footer' => [
-                'title' => __( 'Footer', 'kcg' ),
-                'icon' => 'eicon-footer',
-            ],
+            // 'footer' => [
+            //     'title' => __( 'Footer', 'kcg' ),
+            //     'icon' => 'eicon-footer',
+            // ],
             'globe' => [
                 'title' => __( 'Globe', 'kcg' ),
                 'icon' => 'eicon-globe',
             ],
-            // 'home-section' => [
-            //     'title' => __( 'Home Section', 'kcg' ),
-            //     'icon' => 'eicon-settings',
-            // ],
             'page-title' => [
                 'title' => __( 'Page Title', 'kcg' ),
                 'icon' => 'eicon-post-title',
@@ -99,10 +83,6 @@ class Integration{
                 'title' => __( 'Service', 'kcg' ),
                 'icon' => 'eicon-post-content',
             ],
-            // 'service-menu' => [
-            //     'title' => __( 'Service Menu', 'kcg' ),
-            //     'icon' => 'eicon-menu-bar',
-            // ],
             'service-content' => [
                 'title' => __( 'Service Content', 'kcg' ),
                 'icon' => 'eicon-post-content',
@@ -119,15 +99,10 @@ class Integration{
                 'title' => __( 'Strategy Content', 'kcg' ),
                 'icon' => 'eicon-post-content',
             ],
-            'strategy-case' => [
-                'title' => __( 'Strategy Case', 'kcg' ),
-                'icon' => 'eicon-document-file',
-            ],
             'portfolio' => [
                 'title' => __( 'Prtfolio', 'kcg' ),
                 'icon' => 'eicon-document-file',
             ],
-            
             'journal' => [
                 'title' => __( 'Journal', 'kcg' ),
                 'icon' => 'eicon-document-file',

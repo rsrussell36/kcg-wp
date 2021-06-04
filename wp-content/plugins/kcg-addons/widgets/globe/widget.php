@@ -450,8 +450,9 @@ class Globe extends CREST_BASE{
                 foreach ( $settings['_kcg_globes'] as $index => $item ) :
                     $globe_count = $index + 1;
                     $bg_image = wp_get_attachment_image_url( $item['_kcg_globe_image_bg']['id'], $item['thumbnail_bg_size'] );
+                    $section_color = !empty($item['_kcg_globe_bgc']) ? $item['_kcg_globe_bgc'] : '#141515';
             ?>
-            <div class="infos" data-color="#141515" id="slide-<?php echo esc_attr($globe_count); ?>">
+            <div class="infos" data-color="<?php echo esc_attr($section_color); ?>" id="slide-<?php echo esc_attr($globe_count); ?>">
                 <div class="container-fluid">
                     <div class="row justify-content-between">
                     <?php if (!empty($item['_kcg_globe_title'])): ?>

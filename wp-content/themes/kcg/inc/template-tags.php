@@ -236,7 +236,18 @@ function kcg_is_comment_by_post_author( $comment = null ) {
 		}
 	}
  }
+ function kcg_favicon(){
+	if(class_exists( 'Redux' ) ) {
 
+	   $fav = kcg_options('kcg_fav_icon');
+			   
+		if ( ! ( function_exists( 'has_site_icon' ) && has_site_icon() ) ) {
+		   if ( isset( $fav['url'] ) && ! empty( $fav['url'] ) ) {
+			   echo '<link rel="shortcut icon" href="'.esc_url($fav['url']).'">';
+		   }
+	   }
+   }
+}
  /**
   * display tag 
   */

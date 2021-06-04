@@ -53,7 +53,7 @@ get_header();?>
 				</div>
 			</div>
 		<?php endif; ?>
-		<?php if( is_page( 'services-strategy' ) ) : ?>
+		<?php if( is_page( 'services-strategy' ) || is_page( 'services-marketing' ) || is_page( 'services-product' ) ) : ?>
 			<div class="scrolldown s-white">
 				<span><?php echo esc_html__('SCROLL','kcg'); ?></span>
 			</div>

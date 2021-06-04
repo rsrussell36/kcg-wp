@@ -353,7 +353,7 @@ if( ! function_exists( 'kcg_page_name' ) ) {
         elseif(is_page('services')){
             $prefix = 'services';
         }
-        elseif(is_page('services-strategy')){
+        elseif(is_page('services-strategy') || is_page('services-marketing') || is_page('services-product')){
             $prefix = 'service';
         }
         elseif(is_page('works')){
