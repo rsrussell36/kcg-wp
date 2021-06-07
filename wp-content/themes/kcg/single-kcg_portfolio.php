@@ -81,29 +81,7 @@ $gallery = json_decode(kcg_get_meta_value( get_the_id(), '_kcg_portfolio_gallery
     </div>
   </div>
 
-  <!-- <div class="works-content">
-    <div class="container-fluid">
-      <div class="row justify-content-center">
-        <div class="col col-9">
-          <div class="testimonial no-slick">
-            <div class="slides">
-              <div class="item">
-                <div class="wrapper">
-                  <div class="stars svg"></div>  
-                  <p class="phrase">"You're probably luckier to have them<br>than they are to have you."</p>
-                  <div class="info">
-                    <img class="photo" src="<?php echo KCG_IMAGES; ?>/photos/person-7.png" alt="" />
-                    <span class="name">PHIL P</span>
-                    <span class="occupation">Founder The Swoup App</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
+  
 <?php $category = get_the_terms( get_the_id(), 'kcg_categories' ); 
 if( !empty( $category ) ) :
 ?>
